@@ -228,7 +228,7 @@ Dosen dosen1 = new Dosen("19940201", "Widia, S.Kom. M.Kom", "199402");
         System.out.println(dosen1.nip);
         System.out.println(dosen1.nama);
         pegawai1.displayInfo();
-		```
+```
 ### Berikut adalah hasil Run dari modifikasi
 ![Gambar Run](img/image3.png)
 
