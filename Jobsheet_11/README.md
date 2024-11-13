@@ -219,6 +219,19 @@ public class Demo {
 ### Berikut adalah Hasil Run dari Program diatas
 ![Gambar Run](img/image2.png)
 
+### Modifikasi untuk Upcasting
+```java
+Dosen dosen1 = new Dosen("19940201", "Widia, S.Kom. M.Kom", "199402");
+
+        Pegawai pegawai1 = dosen1;
+        
+        System.out.println(dosen1.nip);
+        System.out.println(dosen1.nama);
+        pegawai1.displayInfo();
+		```
+### Berikut adalah hasil Run dari modifikasi
+![Gambar Run](img/image3.png)
+
 ### Pertanyaan
 1. Apakah upcasting dapat dilakukan dari suatu class terhadap class lain yang tidak memiliki relasi inheritance?
 2. Dari 2 baris kode program berikut, manakan proses upcasting yang tepat? Jelaskan
