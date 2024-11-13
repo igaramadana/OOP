@@ -11,50 +11,58 @@
 
 ## Kode Program dari Jobsheet 10 - Polymorphism
 
+### Heterogenous Collection
 ### Class `Pegawai`
 
 ```java
+package Jobsheet_11;
+
 public class Pegawai {
-    public String nama;
-    public String nip;
+	public String nama;
+	public String nip;
 
-    public Pegawai() {
+    public Pegawai(){
     }
 
-    public Pegawai(String nip, String nama) {
-        this.nama = nama;
-        this.nip = nip;
-    }
+	public Pegawai(String nip, String nama) {
+		this.nama = nama;
+		this.nip = nip;
+	}
 
     public void displayInfo() {
         System.out.println("NIP     : " + nip);
         System.out.println("Nama    : " + nama);
-        System.out.println("----------------------------");
     }
 }
+
 ```
 
 ### Class `Dosen`
 
 ```java
+package Jobsheet_11;
+
 public class Dosen extends Pegawai {
 	public String nidn;
 
-	public Dosen(String nip, String nama, String nind) {
+	public Dosen() {
+	}
+
+	public Dosen(String nip, String nama, String nidn) {
 		super(nip, nama);
-		this.nidn = nind;
+		this.nidn = nidn;
 	}
 
 	public void displayInfo() {
 		super.displayInfo();
-		System.out.println("NIDN	: " + nidn);
+		System.out.println("NIDN: " + nidn);
 	}
 
 	public void mengajar() {
 		System.out.println("Membuat rencana pembelajaran");
 		System.out.println("Menyusun materi");
-        System.out.println("Melaksananakan PBM");
-        System.out.println("Melakukan evaluasi");
+		System.out.println("Melaksanakan PBM");
+		System.out.println("Melakukan Evaluasi");
 	}
 }
 ```
@@ -62,8 +70,14 @@ public class Dosen extends Pegawai {
 ### Class `TenagaKependidikan`
 
 ```java
+package Jobsheet_11;
+
 public class TenagaKependidikan extends Pegawai {
 	public String kategori;
+
+	public TenagaKependidikan() {
+
+	}
 
 	public TenagaKependidikan(String nip, String nama, String kategori) {
 		super(nip, nama);
@@ -71,14 +85,139 @@ public class TenagaKependidikan extends Pegawai {
 	}
 
 	public void displayInfo() {
-        super.displayInfo();
-		System.out.println("Kategori:" + kategori);
+		super.displayInfo();
+		System.out.println("Kategori: " + kategori);
 	}
 }
 ```
 
+### Class `Demo`
+```java
+package Jobsheet_11;
+
+import java.util.ArrayList;
+
+public class Demo {
+    public static void main(String[] args) {
+        Dosen dosen1 = new Dosen("19940201", "Widia, S.Kom. M.Kom", "199402");
+        Dosen dosen2 = new Dosen("19700105", "Muhammad, S.T, M.T", "197001");
+        TenagaKependidikan tendik1 = new TenagaKependidikan("19750301", "Aida, A.Md.", "Tenaga Administrasi");
+        TenagaKependidikan tendik2 = new TenagaKependidikan("19650304", "Rika, S.T.", "Tenaga Laboratorium");
+
+        ArrayList<Pegawai> daftarPegawai = new ArrayList<Pegawai>();
+
+        daftarPegawai.add(dosen1);
+        daftarPegawai.add(dosen2);
+        daftarPegawai.add(tendik1);
+        daftarPegawai.add(tendik2);
+
+        System.out.println("Jumlah Pegawai: " + daftarPegawai.size());
+    }
+}
+```
+
 ### Berikut adalah Hasil Run dari Program diatas
-![Gambar Run](img/image.png)
+![Gambar Run](img/image1.png)
+
+### Object Casting
+### Class `Pegawai`
+
+```java
+package Jobsheet_11;
+
+public class Pegawai {
+	public String nama;
+	public String nip;
+
+    public Pegawai(){
+    }
+
+	public Pegawai(String nip, String nama) {
+		this.nama = nama;
+		this.nip = nip;
+	}
+
+    public void displayInfo() {
+        System.out.println("NIP     : " + nip);
+        System.out.println("Nama    : " + nama);
+    }
+}
+
+```
+
+### Class `Dosen`
+
+```java
+package Jobsheet_11;
+
+public class Dosen extends Pegawai {
+	public String nidn;
+
+	public Dosen() {
+	}
+
+	public Dosen(String nip, String nama, String nidn) {
+		super(nip, nama);
+		this.nidn = nidn;
+	}
+
+	public void displayInfo() {
+		super.displayInfo();
+		System.out.println("NIDN: " + nidn);
+	}
+
+	public void mengajar() {
+		System.out.println("Membuat rencana pembelajaran");
+		System.out.println("Menyusun materi");
+		System.out.println("Melaksanakan PBM");
+		System.out.println("Melakukan Evaluasi");
+	}
+}
+```
+
+### Class `TenagaKependidikan`
+
+```java
+package Jobsheet_11;
+
+public class TenagaKependidikan extends Pegawai {
+	public String kategori;
+
+	public TenagaKependidikan() {
+
+	}
+
+	public TenagaKependidikan(String nip, String nama, String kategori) {
+		super(nip, nama);
+		this.kategori = kategori;
+	}
+
+	public void displayInfo() {
+		super.displayInfo();
+		System.out.println("Kategori: " + kategori);
+	}
+}
+```
+### Class `Demo`
+```java
+package Jobsheet_11;
+
+import java.util.ArrayList;
+
+public class Demo {
+    public static void main(String[] args) {
+        Dosen dosen1 = new Dosen("19940201", "Widia, S.Kom. M.Kom", "199402");
+        
+        System.out.println(dosen1.nip);
+        System.out.println(dosen1.nama);
+        System.out.println(dosen.nidn);
+        dosen1.mengajar();
+    }
+}
+```
+
+### Berikut adalah Hasil Run dari Program diatas
+![Gambar Run](img/image2.png)
 
 ### Pertanyaan
 1. Apakah upcasting dapat dilakukan dari suatu class terhadap class lain yang tidak memiliki relasi inheritance?
