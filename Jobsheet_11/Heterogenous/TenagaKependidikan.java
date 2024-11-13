@@ -1,7 +1,11 @@
-package Jobsheet_11;
+package Jobsheet_11.Heterogenous;
 
 public class TenagaKependidikan extends Pegawai {
 	public String kategori;
+
+	public TenagaKependidikan() {
+
+	}
 
 	public TenagaKependidikan(String nip, String nama, String kategori) {
 		super(nip, nama);
@@ -9,7 +13,7 @@ public class TenagaKependidikan extends Pegawai {
 	}
 
 	public void displayInfo() {
-        super.displayInfo();
-		System.out.println("Kategori:" + kategori);
+		super.displayInfo();
+		System.out.println("Kategori: " + kategori);
 	}
 }

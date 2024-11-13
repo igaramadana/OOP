@@ -1,4 +1,4 @@
-package Jobsheet_11;
+package Jobsheet_11.Heterogenous;
 
 public class Pegawai {
 	public String nama;
@@ -15,6 +15,5 @@ public class Pegawai {
     public void displayInfo() {
         System.out.println("NIP     : " + nip);
         System.out.println("Nama    : " + nama);
-        System.out.println("----------------------------");
     }
 }

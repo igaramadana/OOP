@@ -1,22 +1,25 @@
-package Jobsheet_11;
+package Jobsheet_11.Heterogenous;
 
 public class Dosen extends Pegawai {
 	public String nidn;
 
-	public Dosen(String nip, String nama, String nind) {
+	public Dosen() {
+	}
+
+	public Dosen(String nip, String nama, String nidn) {
 		super(nip, nama);
-		this.nidn = nind;
+		this.nidn = nidn;
 	}
 
 	public void displayInfo() {
 		super.displayInfo();
-		System.out.println("NIDN	: " + nidn);
+		System.out.println("NIDN: " + nidn);
 	}
 
 	public void mengajar() {
 		System.out.println("Membuat rencana pembelajaran");
 		System.out.println("Menyusun materi");
-        System.out.println("Melaksananakan PBM");
-        System.out.println("Melakukan evaluasi");
+		System.out.println("Melaksanakan PBM");
+		System.out.println("Melakukan Evaluasi");
 	}
 }

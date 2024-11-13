@@ -253,6 +253,31 @@ public static void main(String[] args) {
 ### Berikut adalah hasil Run dari modifikasi Downcasting
 ![Gambar Run](img/image4.png)
 
+### Modifikasi Program dengan konsep Polimorfisme
+```java
+public class Demo {
+    public static void main(String[] args) {
+        Dosen dosen1 = new Dosen("19940201", "Widia, S.Kom. M.Kom", "199402");
+        TenagaKependidikan tendik1 = new TenagaKependidikan("19750301", "Aida, A.Md.", "Tenaga Administrasi");
+
+        train(dosen1);
+        train(tendik1);
+    }
+
+    public static void train(Pegawai pegawai) {
+        pegawai.displayInfo();
+        System.out.println("Mengenalkan lingkungan kampus");
+        System.out.println("Menginfokan SOP/Juknis");
+
+        if (pegawai instanceof Dosen) {
+            System.out.println("Memberikan pelatihan pedagogik");
+        }
+    }
+}
+```
+### Berikut adalah output dari modifikasi dengan konsep Polimorfisme
+![Gambar Run](img/image6.png)
+
 ### Pertanyaan
 1. Apakah upcasting dapat dilakukan dari suatu class terhadap class lain yang tidak memiliki relasi inheritance?
 2. Dari 2 baris kode program berikut, manakan proses upcasting yang tepat? Jelaskan
