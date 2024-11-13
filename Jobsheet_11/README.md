@@ -232,6 +232,27 @@ Dosen dosen1 = new Dosen("19940201", "Widia, S.Kom. M.Kom", "199402");
 ### Berikut adalah hasil Run dari modifikasi
 ![Gambar Run](img/image3.png)
 
+### Modifikasi untuk Downcasting
+```java
+public static void main(String[] args) {
+        Dosen dosen1 = new Dosen("19940201", "Widia, S.Kom. M.Kom", "199402");
+
+        Pegawai pegawai1 = dosen1;
+        
+        System.out.println(dosen1.nip);
+        System.out.println(dosen1.nama);
+        pegawai1.displayInfo();
+
+        Dosen newDosen = (Dosen) pegawai1;
+
+        System.out.println(newDosen.nama);
+        System.out.println(newDosen.nidn);
+        newDosen.mengajar();
+    }
+```
+### Berikut adalah hasil Run dari modifikasi Downcasting
+![Gambar Run](img/image4.png)
+
 ### Pertanyaan
 1. Apakah upcasting dapat dilakukan dari suatu class terhadap class lain yang tidak memiliki relasi inheritance?
 2. Dari 2 baris kode program berikut, manakan proses upcasting yang tepat? Jelaskan
